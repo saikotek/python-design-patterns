@@ -1,148 +1,88 @@
 """
 Observer Design Pattern
 
-Intent: Lets you define a subscription mechanism to notify multiple objects
-about any events that happen to the object they're observing.
-
-Note that there's a lot of different terms with similar meaning associated with
-this pattern. Just remember that the Subject is also called the Publisher and
-the Observer is often called the Subscriber and vice versa. Also the verbs
-"observe", "listen" or "track" usually mean the same thing.
+Intent: Defines a one-to-many relation between objects so that when one object (the subject)
+changes state, all its dependents (observers) are notified.
+ 
+Observers are also called Subscribers.
+Subject is also called Publisher.
 """
-
-
 from __future__ import annotations
-from abc import ABC, abstractmethod
-from random import randrange
-from typing import List
+from typing import List, Protocol
 
 
-class Subject(ABC):
-    """
-    The Subject interface declares a set of methods for managing
-    subscribers.
-    """
+class Observer(Protocol):
+    """Interface for an Observer which will be updated by Subject."""
 
-    @abstractmethod
-    def attach(self, observer: Observer) -> None:
+    def update(self, subject: Subject) -> None:
+        """Receive update from subject.
+
+        Args:
+            subject (Subject): The subject being observed.
         """
-        Attach an observer to the subject.
-        """
-        pass
+        ...
 
-    @abstractmethod
-    def detach(self, observer: Observer) -> None:
-        """
-        Detach an observer from the subject.
-        """
-        pass
+class Subject:
+    """Class that maintains a list of observers and notifies them of any changes."""
 
-    @abstractmethod
-    def notify(self) -> None:
-        """
-        Notify all observers about an event.
-        """
-        pass
-
-
-class ConcreteSubject(Subject):
-    """
-    The Subject owns some important state and notifies observers when the
-    state changes.
-    """
-
-    _state: int = None
-    """
-    For the sake of simplicity, the Subject's state, essential to all
-    subscribers, is stored in this variable.
-    """
-
-    _observers: List[Observer] = []
-    """
-    List of subscribers. In real life, the list of subscribers can be stored
-    more comprehensively (categorized by event type, etc.).
-    """
+    def __init__(self) -> None:
+        """Initialize the subject with an empty list of observers."""
+        self._observers: List[Observer] = []
 
     def attach(self, observer: Observer) -> None:
-        print("Subject: Attached an observer.")
+        """Attach an observer to the subject."""
         self._observers.append(observer)
 
     def detach(self, observer: Observer) -> None:
+        """Detach an observer from the subject."""
         self._observers.remove(observer)
 
-    """
-    The subscription management methods.
-    """
-
     def notify(self) -> None:
-        """
-        Trigger an update in each subscriber.
-        """
-
-        print("Subject: Notifying observers...")
+        """Notify all observers about an event."""
         for observer in self._observers:
             observer.update(self)
 
-    def some_business_logic(self) -> None:
-        """
-        Usually, the subscription logic is only a fraction of what a Subject
-        can really do. Subjects commonly hold some important business logic,
-        that triggers a notification method whenever something important is
-        about to happen (or after it).
-        """
+class ConcreteSubject(Subject):
+    """Concrete implementation of Subject that maintains a state."""
 
-        print("\nSubject: I'm doing something important.")
-        self._state = randrange(0, 10)
+    def __init__(self) -> None:
+        """Initialize the subject and its state."""
+        super().__init__()
+        self._state: int = 0
 
-        print(f"Subject: My state has just changed to: {self._state}")
+    @property
+    def state(self) -> int:
+        """Get the state of the subject."""
+        return self._state
+
+    @state.setter
+    def state(self, value: int) -> None:
+        """Set the state of the subject and notify observers."""
+        print(f"{type(self).__name__} state changed to {value}")
+        self._state = value
         self.notify()
 
+class ConcreteObserver(Observer):
+    """Concrete implementation of Observer that reacts to updates from Subject."""
 
-class Observer(ABC):
-    """
-    The Observer interface declares the update method, used by subjects.
-    """
+    def __init__(self, name: str) -> None:
+        """Initialize the observer with a name."""
+        self.name = name
 
-    @abstractmethod
     def update(self, subject: Subject) -> None:
-        """
-        Receive update from subject.
-        """
-        pass
+        """Update the observer's state to match the subject's state."""
+        if isinstance(subject, ConcreteSubject):
+            print(f"{self.name} notified with new state: {subject.state}")
 
 
-"""
-Concrete Observers react to the updates issued by the Subject they had been
-attached to.
-"""
-
-
-class ConcreteObserverA(Observer):
-    def update(self, subject: Subject) -> None:
-        if subject._state < 3:
-            print("ConcreteObserverA: Reacted to the event")
-
-
-class ConcreteObserverB(Observer):
-    def update(self, subject: Subject) -> None:
-        if subject._state == 0 or subject._state >= 2:
-            print("ConcreteObserverB: Reacted to the event")
-
-
+# Example usage:
 if __name__ == "__main__":
-    # The client code.
-
     subject = ConcreteSubject()
+    observer1 = ConcreteObserver("Observer 1")
+    observer2 = ConcreteObserver("Observer 2")
 
-    observer_a = ConcreteObserverA()
-    subject.attach(observer_a)
+    subject.attach(observer1)
+    subject.attach(observer2)
 
-    observer_b = ConcreteObserverB()
-    subject.attach(observer_b)
-
-    subject.some_business_logic()
-    subject.some_business_logic()
-
-    subject.detach(observer_a)
-
-    subject.some_business_logic()
+    subject.state = 10  # This should notify all observers and update their state
+    subject.state = 20  # This should notify all observers and update their state
