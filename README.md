@@ -16,7 +16,7 @@ Each design pattern has at least two scripts:
 
 ## Remarks
 - Most of the examples don't do the real job, they just show how you'd leverage the design pattern in certain use case.<br/>
-But there are some examples in which I've attempted to do the real job as in [bridge pattern database example](https://github.com/saikotek/python-design-patterns/src/bridge/ex_database.py) that uses Testcontainers to boot the real database.
+But there are some examples in which I've attempted to do the real job as in [bridge pattern database example](https://github.com/saikotek/python-design-patterns/blob/main/src/bridge/ex_databases.py) that uses Testcontainers to boot the real database.
 - Whenever possible I've used Protocols as a static way of duck typing (more on that here: [Protocols](https://mypy.readthedocs.io/en/stable/protocols.html))
 
 ## References
