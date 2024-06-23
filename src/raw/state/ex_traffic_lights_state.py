@@ -1,56 +1,68 @@
-# Class-based state machine implementation using the state design pattern
-# The state machine for the traffic light cycles through 3 states: RED, GREEN, and YELLOW. 
+"""State Design Pattern
 
+Class-based state machine implementation using the state design pattern.
+
+Example: The state machine for the traffic light cycles through 3 states: RED, GREEN, and YELLOW.
+"""
+from __future__ import annotations
 from typing import Protocol
 
-# Protocol that defines the interface for all state classes
 class TrafficLightState(Protocol):
-    def transition(self, context: 'TrafficLightContext') -> None:
-        pass
+    """Protocol that defines the interface for all state classes."""
+
+    def transition(self, context: TrafficLightContext) -> None:
+        """Transitions to the next state."""
+        ...
 
     def perform_action(self) -> None:
-        pass
+        """Performs the action associated with the current state."""
+        ...
 
-# Concrete state class representing the RED light state
 class RedState:
-    def transition(self, context: 'TrafficLightContext') -> None:
+    """Concrete state class representing the RED light state."""
+
+    def transition(self, context: TrafficLightContext) -> None:
         print("Transitioning to GREEN")
         context.state = GreenState()
 
     def perform_action(self) -> None:
         print("Stop! The light is RED")
 
-# Concrete state class representing the GREEN light state
 class GreenState:
-    def transition(self, context: 'TrafficLightContext') -> None:
+    """Concrete state class representing the GREEN light state."""
+
+    def transition(self, context: TrafficLightContext) -> None:
         print("Transitioning to YELLOW")
         context.state = YellowState()
 
     def perform_action(self) -> None:
         print("Go! The light is GREEN")
 
-# Concrete state class representing the YELLOW light state
 class YellowState:
-    def transition(self, context: 'TrafficLightContext') -> None:
+    """Concrete state class representing the YELLOW light state."""
+
+    def transition(self, context: TrafficLightContext) -> None:
         print("Transitioning to RED")
         context.state = RedState()
 
     def perform_action(self) -> None:
         print("Caution! The light is YELLOW")
 
-# Context class that maintains a reference to the current state
 class TrafficLightContext:
+    """Context class that maintains a reference to the current state."""
+
     def __init__(self) -> None:
-        # Initialize the traffic light to the RED state
+        """Initializes the traffic light to the RED state."""
         self.state: TrafficLightState = RedState()
 
     def transition(self) -> None:
-        # Delegate the transition to the current state
+        """Delegates the transition to the current state."""
         self.state.transition(self)
 
     def perform_action(self) -> None:
-        # Delegate the action to the current state
+        """Delegates the action to the current state."""
         self.state.perform_action()
+
 
 # Usage example
 if __name__ == "__main__":

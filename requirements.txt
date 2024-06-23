@@ -1,5 +1,6 @@
 pycodestyle
 pep8
-psycopg2
 testcontainers
+psycopg2-binary
 faker
+python-statemachine

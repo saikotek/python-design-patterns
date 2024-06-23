@@ -2,103 +2,94 @@
 State Design Pattern
 
 Intent: Lets an object alter its behavior when its internal state changes. It
-appears as if the object changed its class.
+appears as if the object changed its class. This is close concept to finite state machines.
 """
-
-
 from __future__ import annotations
-from abc import ABC, abstractmethod
+from typing import Protocol
 
 
 class Context:
-    """
-    The Context defines the interface of interest to clients. It also
-    maintains a reference to an instance of a State subclass, which represents
-    the current state of the Context.
-    """
+    """Context maintains an instance of a State that defines the current state.
 
-    _state = None
-    """
-    A reference to the current state of the Context.
+    Attributes:
+        state (State): The current state of the context.
     """
 
     def __init__(self, state: State) -> None:
-        self.transition_to(state)
+        """Initializes the Context with an initial state.
 
-    def transition_to(self, state: State):
+        Args:
+            state (State): The initial state of the context.
         """
-        The Context allows changing the State object at runtime.
-        """
+        self._state = state
+        self._state.context = self
 
+    @property
+    def state(self) -> State:
+        """Gets the current state of the context.
+
+        Returns:
+            State: The current state of the context.
+        """
+        return self._state
+
+    @state.setter
+    def state(self, state: State) -> None:
+        """Sets a new state for the context.
+
+        Args:
+            state (State): The new state to be set.
+        """
         print(f"Context: Transition to {type(state).__name__}")
         self._state = state
         self._state.context = self
 
+    def request(self) -> None:
+        """Triggers a request, which delegates the behavior to the current state."""
+        self._state.handle()
+
+class State(Protocol):
+    """State interface declares a method for handling requests."""
+
+    context: Context
+
+    def handle(self) -> None:
+        """Handles the request according to the current state."""
+        ...
+
+class ConcreteStateA:
+    """ConcreteStateA implements the behavior associated with a state.
+
+    Attributes:
+        context (Context): The context associated with this state.
     """
-    The Context delegates part of its behavior to the current State object.
+
+    context: Context
+
+    def handle(self) -> None:
+        """Handles the request and transitions to ConcreteStateB."""
+        print("ConcreteStateA handles the request and transitions to ConcreteStateB.")
+        self.context.state = ConcreteStateB()
+
+class ConcreteStateB:
+    """ConcreteStateB implements the behavior associated with a state.
+
+    Attributes:
+        context (Context): The context associated with this state.
     """
 
-    def request1(self):
-        self._state.handle1()
+    context: Context
 
-    def request2(self):
-        self._state.handle2()
-
-
-class State(ABC):
-    """
-    The base State class declares methods that all Concrete State should
-    implement and also provides a backreference to the Context object,
-    associated with the State. This backreference can be used by States to
-    transition the Context to another State.
-    """
-
-    @property
-    def context(self) -> Context:
-        return self._context
-
-    @context.setter
-    def context(self, context: Context) -> None:
-        self._context = context
-
-    @abstractmethod
-    def handle1(self) -> None:
-        pass
-
-    @abstractmethod
-    def handle2(self) -> None:
-        pass
+    def handle(self) -> None:
+        """Handles the request and transitions to ConcreteStateA."""
+        print("ConcreteStateB handles the request and transitions to ConcreteStateA.")
+        self.context.state = ConcreteStateA()
 
 
-"""
-Concrete States implement various behaviors, associated with a state of the
-Context.
-"""
-
-
-class ConcreteStateA(State):
-    def handle1(self) -> None:
-        print("ConcreteStateA handles request1.")
-        print("ConcreteStateA wants to change the state of the context.")
-        self.context.transition_to(ConcreteStateB())
-
-    def handle2(self) -> None:
-        print("ConcreteStateA handles request2.")
-
-
-class ConcreteStateB(State):
-    def handle1(self) -> None:
-        print("ConcreteStateB handles request1.")
-
-    def handle2(self) -> None:
-        print("ConcreteStateB handles request2.")
-        print("ConcreteStateB wants to change the state of the context.")
-        self.context.transition_to(ConcreteStateA())
-
-
+# Example usage:
 if __name__ == "__main__":
-    # The client code.
+    initial_state = ConcreteStateA()
+    context = Context(initial_state)
 
-    context = Context(ConcreteStateA())
-    context.request1()
-    context.request2()
+    context.request()  # ConcreteStateA handles the request and transitions to ConcreteStateB.
+    context.request()  # ConcreteStateB handles the request and transitions to ConcreteStateA.
