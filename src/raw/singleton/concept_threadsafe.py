@@ -4,76 +4,62 @@ Singleton Design Pattern
 Intent: Lets you ensure that a class has only one instance, while providing a
 global access point to this instance. One instance per each subclass (if any).
 """
-
-from threading import Lock, Thread
-
+from __future__ import annotations
+import threading
+from typing import Optional
 
 class SingletonMeta(type):
-    """
-    This is a thread-safe implementation of Singleton.
-    """
+    """A thread-safe implementation of the Singleton metaclass.
 
-    _instances = {}
-
-    _lock: Lock = Lock()
+    This metaclass ensures that a class has only one instance and provides a global point of access to it.
     """
-    We now have a lock object that will be used to synchronize
-    threads during first access to the Singleton.
-    """
+    _instance: Optional[Singleton] = None
+    _lock: threading.Lock = threading.Lock()
 
-    def __call__(cls, *args, **kwargs):
+    def __call__(cls, *args, **kwargs) -> Singleton:
+        """Overrides the __call__ method to control the instantiation of the Singleton class.
+
+        Ensures thread-safe instantiation of the Singleton instance.
+
+        Returns:
+            Singleton: The singleton instance of the class.
         """
-        Possible changes to the value of the `__init__` argument do not
-        affect the returned instance.
-        """
-        # Now, imagine that the program has just been launched.
-        # Since there's no Singleton instance yet, multiple threads can
-        # simultaneously pass the previous conditional and reach this
-        # point almost at the same time. The first of them will acquire
-        # lock and will proceed further, while the rest will wait here.
         with cls._lock:
-            # The first thread to acquire the lock, reaches this
-            # conditional, goes inside and creates the Singleton
-            # instance. Once it leaves the lock block, a thread that
-            # might have been waiting for the lock release may then
-            # enter this section. But since the Singleton field is
-            # already initialized, the thread won't create a new
-            # object.
-            if cls not in cls._instances:
-                instance = super().__call__(*args, **kwargs)
-                cls._instances[cls] = instance
-        return cls._instances[cls]
-
+            if cls._instance is None:
+                cls._instance = super().__call__(*args, **kwargs)
+        return cls._instance
 
 class Singleton(metaclass=SingletonMeta):
-    value: str = None
-    """
-    We'll use this property to prove that our Singleton really works.
-    """
+    """A Singleton class that ensures only one instance is created in a thread-safe manner."""
 
-    def __init__(self, value: str) -> None:
-        self.value = value
+    def __init__(self) -> None:
+        self.value = None
 
-    def some_business_logic(self):
-        """
-        Finally, any singleton should define some business logic, which can
-        be executed on its instance.
-        """
+    def business_logic(self) -> None:
+        """A placeholder method for the singleton's business logic."""
+        print("Executing business logic.")
 
 
-def test_singleton(value: str) -> None:
-    singleton = Singleton(value)
-    print(singleton.value)
+# Client code
+def singleton_test() -> None:
+    singleton = Singleton()
+    singleton.value = "Singleton instance value"
+    print(f"Singleton value: {singleton.value}")
 
 
 if __name__ == "__main__":
-    # The client code.
-    print("If you see the same value, then singleton was reused (yay!)\n"
-          "If you see different values, "
-          "then 2 singletons were created (booo!!)\n\n"
-          "RESULT:\n")
+    # Create multiple threads to test thread-safety of Singleton
+    threads = []
+    for i in range(10):
+        thread = threading.Thread(target=singleton_test)
+        threads.append(thread)
+        thread.start()
 
-    process1 = Thread(target=test_singleton, args=("FOO",))
-    process2 = Thread(target=test_singleton, args=("BAR",))
-    process1.start()
-    process2.start()
+    for thread in threads:
+        thread.join()
+
+    # Check that the singleton instance is the same across threads
+    singleton1 = Singleton()
+    singleton2 = Singleton()
+    print(f"Singleton1 is Singleton2: {singleton1 is singleton2}")  # True
+    singleton1.business_logic()  # Executing business logic.

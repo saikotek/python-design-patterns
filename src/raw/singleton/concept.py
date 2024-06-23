@@ -4,45 +4,49 @@ Singleton Design Pattern
 Intent: Lets you ensure that a class has only one instance, while providing a
 global access point to this instance. One instance per each subclass (if any).
 """
+from __future__ import annotations
+from typing import Optional
 
 
 class SingletonMeta(type):
+    """A metaclass for creating Singleton classes.
+
+    This metaclass ensures that a class has only one instance and provides a global point of access to it.
     """
-    The Singleton class can be implemented in different ways in Python. Some
-    possible methods include: base class, decorator, metaclass. We will use the
-    metaclass because it is best suited for this purpose.
-    """
+    _instance: Optional[Singleton] = None
 
-    _instances = {}
+    def __call__(cls, *args, **kwargs) -> Singleton:
+        """Overrides the __call__ method to control the instantiation of the Singleton class.
 
-    def __call__(cls, *args, **kwargs):
+        If an instance of the class does not exist, it creates one. Otherwise, it returns the existing instance.
+
+        Returns:
+            Singleton: The singleton instance of the class.
         """
-        Possible changes to the value of the `__init__` argument do not
-        affect the returned instance.
-        """
-        if cls not in cls._instances:
-            instance = super().__call__(*args, **kwargs)
-            cls._instances[cls] = instance
-        return cls._instances[cls]
-
+        if cls._instance is None:
+            cls._instance = super().__call__(*args, **kwargs)
+        return cls._instance
 
 class Singleton(metaclass=SingletonMeta):
-    def some_business_logic(self):
-        """
-        Finally, any singleton should define some business logic, which can
-        be executed on its instance.
-        """
+    """A Singleton class that can have only one instance."""
 
-        # ...
+    def __init__(self) -> None:
+        self.value = None
+
+    def business_logic(self) -> None:
+        """A placeholder method for the singleton's business logic."""
+        print("Executing business logic.")
 
 
+# Client code
 if __name__ == "__main__":
-    # The client code.
+    singleton1 = Singleton()
+    singleton2 = Singleton()
 
-    s1 = Singleton()
-    s2 = Singleton()
+    singleton1.value = "Singleton instance value"
 
-    if id(s1) == id(s2):
-        print("Singleton works, both variables contain the same instance.")
-    else:
-        print("Singleton failed, variables contain different instances.")
+    print(f"Singleton1 value: {singleton1.value}")  # Singleton instance value
+    print(f"Singleton2 value: {singleton2.value}")  # Singleton instance value
+    print(f"Singleton1 is Singleton2: {singleton1 is singleton2}")  # True
+
+    singleton1.business_logic()  # Executing business logic.
