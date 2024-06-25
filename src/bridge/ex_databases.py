@@ -2,8 +2,11 @@
 Bridge Design Pattern
 Example: Refined abstractions (Transactional, Logging) of Database
 for different (Sqlite, Postgres) database implementations.
+
+To run this example you need to have Docker installed. 
+Testcontainers will spin up the real Postgres database in Docker container.
 """
-from typing import Protocol
+from typing import Protoco
 import sqlite3
 from psycopg2 import connect
 import psycopg2
