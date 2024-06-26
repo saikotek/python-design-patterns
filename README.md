@@ -9,6 +9,7 @@ I attempted to use modern Python features and best practices in the examples, su
 - Protocols
 - Alternative approaches to design patterns such as function decorators
 
+This repository serves as a comprehensive reference for understanding and implementing design patterns in Python.
 ## What are Design Patterns?
 Design patterns are proven solutions to common software design problems. They provide a template for writing code that is maintainable, reusable, and scalable. 
 This project covers a wide range of design patterns, traditionally divided into three categories: creational, structural, and behavioral.
@@ -23,7 +24,7 @@ py -m venv venv
 pip install -r requirements.txt
 ```
 
-## Structure
+## List of Design Patterns
 Each design pattern has at least two scripts:
   - `concept.py` - conceptual implementation
   - `ex_{script}.py` - example real-world scenario
@@ -134,8 +135,6 @@ Each design pattern has at least two scripts:
 - **Specification**
   - `concept.py`
   - `ex_ecommerce.py`
-
-Each directory contains a `concept.py` file illustrating the basic concept of the pattern and example files (`ex_*.py`) showing practical implementations. This repository serves as a comprehensive reference for understanding and implementing design patterns in Python.
 
 ## Remarks
 - Most of the examples don't do the real job, they just show how you'd leverage the design pattern in certain use case.<br/>

@@ -124,15 +124,16 @@ def client_code(iterator: Iterator[str]) -> None:
         print(item)
 
 
-# Usage
-items = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5"]
-inventory_iterable = InventoryIterable(items)
+if __name__ == "__main__":
+    # Usage
+    items = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5"]
+    inventory_iterable = InventoryIterable(items)
 
-print("Normal Order:")
-client_code(iter(inventory_iterable))
+    print("Normal Order:")
+    client_code(iter(inventory_iterable))
 
-print("\nReverse Order:")
-client_code(inventory_iterable.reverse_iterator())
+    print("\nReverse Order:")
+    client_code(inventory_iterable.reverse_iterator())
 
-print("\nRandom Order:")
-client_code(inventory_iterable.random_order_iterator())
+    print("\nRandom Order:")
+    client_code(inventory_iterable.random_order_iterator())

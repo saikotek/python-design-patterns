@@ -125,19 +125,20 @@ class GraphIterable(Iterable):
         return DFSIterator(self.graph, self.start)
 
 
-# Usage
-graph = Graph()
-graph.add_edge(1, 2)
-graph.add_edge(1, 3)
-graph.add_edge(2, 4)
-graph.add_edge(3, 4)
+if __name__ == "__main__":
+    # Usage
+    graph = Graph()
+    graph.add_edge(1, 2)
+    graph.add_edge(1, 3)
+    graph.add_edge(2, 4)
+    graph.add_edge(3, 4)
 
-graph_iterable = GraphIterable(graph, 1)
+    graph_iterable = GraphIterable(graph, 1)
 
-print("BFS Traversal:")
-for vertex in graph_iterable:
-    print(vertex)
+    print("BFS Traversal:")
+    for vertex in graph_iterable:
+        print(vertex)
 
-print("\nDFS Traversal:")
-for vertex in graph_iterable.dfs_iterator():
-    print(vertex)
+    print("\nDFS Traversal:")
+    for vertex in graph_iterable.dfs_iterator():
+        print(vertex)

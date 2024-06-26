@@ -5,7 +5,7 @@ of Database for different (Sqlite, Postgres) database implementations.
 To run this example you need to have Docker installed. 
 Testcontainers will spin up the real Postgres database in Docker container.
 """
-from typing import Protoco
+from typing import Protocol
 import sqlite3
 from psycopg2 import connect
 import psycopg2
