@@ -1,0 +1,103 @@
+.
+├── abstract-factory
+│   ├── concept.py
+│   └── ex_gui.py
+├── adapter
+│   ├── concept_class_adapter.py
+│   ├── concept_object_adapter.py
+│   └── ex_xml_to_json_adapter.py
+├── bridge
+│   ├── concept.py
+│   ├── ex_databases.py
+│   └── ex_gui.py
+├── builder
+│   ├── concept.py
+│   ├── ex_computer.py
+│   └── ex_computer_fluent.py
+├── chain-of-responsibility
+│   ├── concept.py
+│   └── ex_gui.py
+├── command
+│   ├── concept.py
+│   └── ex_editor.py
+├── composite
+│   ├── concept.py
+│   └── ex_file_system.py
+├── decorator
+│   ├── class-decorators
+│   │   ├── concept.py
+│   │   └── ex_data_access.py
+│   ├── classic-decorators
+│   │   ├── concept.py
+│   │   ├── ex_data_access.py
+│   │   ├── ex_data_handler.py
+│   │   └── ex_document_processor.py
+│   └── function-decorators
+│       ├── concept.py
+│       ├── ex_access_control.py
+│       ├── ex_caching.py
+│       └── ex_logging.py
+├── facade
+│   ├── concept.py
+│   └── ex_third_party_lib.py
+├── factory-method
+│   ├── concept.py
+│   └── ex_notifications.py
+├── flyweight
+│   ├── concept.py
+│   └── ex_chess.py
+├── iterator
+│   ├── concept.py
+│   ├── ex_graph.py
+│   ├── ex_inventory.py
+│   └── ex_tree.py
+├── mediator
+│   ├── concept.py
+│   ├── ex_chatroom.py
+│   ├── ex_stock_market.py
+│   └── ex_ui_components.py
+├── memento
+│   ├── concept.py
+│   ├── ex_game_state.py
+│   └── ex_transactional_db.py
+├── observer
+│   ├── concept.py
+│   ├── concept_distributed.py
+│   ├── ex_smart_home.py
+│   └── ex_stock_market.py
+├── prototype
+│   ├── concept.py
+│   └── ex_documents.py
+├── proxy
+│   ├── concept.py
+│   ├── ex_caching_proxy.py
+│   ├── ex_logging_proxy.py
+│   ├── ex_protection_proxy.py
+│   ├── ex_protection_proxy_decorator.py
+│   ├── ex_smart_reference_proxy.py
+│   └── ex_virtual_proxy.py
+├── singleton
+│   ├── concept.py
+│   ├── concept_threadsafe.py
+│   └── ex_configuration.py
+├── specification
+│   ├── concept.py
+│   └── ex_ecommerce.py
+├── state
+│   ├── concept.py
+│   ├── ex_traffic_lights_enum.py
+│   ├── ex_traffic_lights_sm_library.py
+│   └── ex_traffic_lights_state.py
+├── strategy
+│   ├── concept.py
+│   ├── ex_payment_processor.py
+│   └── ex_text_formatter.py
+├── template-method
+│   ├── concept.py
+│   └── ex_data_pipeline.py
+├── tree.txt
+└── visitor
+    ├── concept.py
+    └── ex_file_visitor.py
+
+26 directories, 74 files
