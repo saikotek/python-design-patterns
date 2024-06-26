@@ -1,7 +1,5 @@
 """
-Composite Design Pattern
-
-Example: Working with files and directories through a composite structure.
+Composite Pattern Example: Working with files and directories through a composite structure.
 """
 from typing import Protocol, List
 import os

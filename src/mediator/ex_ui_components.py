@@ -1,5 +1,10 @@
-# Mediator Design Pattern real-world example
-# UI components
+"""
+Mediator Pattern Example: UI Components
+
+In this example, the Mediator coordinates communication between UI components
+such as buttons and text fields. E.g. when a button is clicked, the mediator is
+notified and can respond by updating the text field.
+"""
 from __future__ import annotations
 from abc import ABC, abstractmethod
 from typing import Protocol

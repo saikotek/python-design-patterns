@@ -1,3 +1,8 @@
+"""
+Smart Reference Proxy Example
+"""
+
+
 class HeavyObject:
     """Class representing a heavy object that is expensive to create and destroy."""
 

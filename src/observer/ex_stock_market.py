@@ -1,7 +1,7 @@
 """
-Observer Design Pattern
+Observer Design Pattern Example: Stock market monitoring system 
+where clients subscribe to stock price updates.
 
-Example: Stock market monitoring system where clients subscribe to stock price updates.
 Protocols in Python allow for structural subtyping (duck typing), enabling type checking based on
 the presence of methods and properties rather than explicit inheritance.
 """

@@ -1,4 +1,4 @@
-"""Virtual Proxy Pattern
+"""Virtual Proxy Pattern Example
 
 Also known as Lazy Initialization, a virtual proxy delays the creation/evaluation
 of an expensive object/operation until it is actually needed.

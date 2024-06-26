@@ -1,5 +1,5 @@
 """
-Proxy Design Pattern
+Proxy Pattern
 
 A proxy is a class that functions as an interface to something else, such as a network connection, 
 a large object in memory, a file, or another object. It acts as a wrapper that the client calls to

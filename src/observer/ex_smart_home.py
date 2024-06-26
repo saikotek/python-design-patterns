@@ -1,6 +1,6 @@
-"""Distribution Observer Pattern
-
-Example: A home automation system where devices can subscribe to and publish events.
+"""
+Distribution Observer Pattern Example: A home automation system
+where devices can subscribe to and publish events.
 """
 from typing import List, Dict, Any, Protocol
 

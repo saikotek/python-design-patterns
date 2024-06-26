@@ -1,5 +1,5 @@
 """
-Builder Design Pattern
+Builder Pattern
 
 Intent: Separate the construction of a complex object from its
 representation so that the same construction process 

@@ -1,7 +1,6 @@
-"""Caching Proxy Pattern
-
-Example: A caching proxy that stores results of expensive operations and 
-returns the cached result when the same operation is requested again.
+"""Caching Proxy Pattern Example: A caching proxy that stores results
+of expensive operations and returns the cached result when the same
+operation is requested again.
 """
 
 

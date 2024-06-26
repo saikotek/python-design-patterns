@@ -1,3 +1,7 @@
+"""
+Protection Proxy with Decorator Example: A protection proxy that controls access
+to sensitive data based on the user's role using a decorator.
+"""
 from __future__ import annotations
 
 class SensitiveData:

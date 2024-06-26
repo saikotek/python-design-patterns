@@ -1,5 +1,5 @@
 """
-Python State Machine
+Python State Machine Example: Traffic Lights
 
 If you need more advanced features, instead of implementing your own state machine,
 you can use off-the-shelf state machine library.

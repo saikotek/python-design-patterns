@@ -1,3 +1,7 @@
+"""
+Iterator Design Pattern Example: Tree Traversal 
+"""
+
 from abc import ABC, abstractmethod
 from collections.abc import Iterator, Iterable
 

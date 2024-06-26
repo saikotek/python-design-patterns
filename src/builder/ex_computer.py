@@ -1,6 +1,5 @@
 """
-Builder Design Pattern
-Example: Computer Builder with concrete builder classes for gaming
+Builder Pattern Example: Computer Builder with concrete builder classes for gaming
 and office computers.
 """
 from typing import Protocol

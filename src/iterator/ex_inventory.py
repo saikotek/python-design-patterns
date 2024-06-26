@@ -1,7 +1,5 @@
 """
-Iterator Design Pattern
-
-Example: Inventory Traversal
+Iterator Design Pattern Example: Inventory Traversal
 """
 from typing import Iterator, List
 import random

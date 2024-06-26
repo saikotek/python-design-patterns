@@ -1,7 +1,6 @@
 """
-Memento Design Pattern
+Memento Pattern Example: Using Memento pattern to save and restore the state of a transactional database.
 
-Example: Using Memento pattern to save and restore the state of a transactional database.
 In this context, the Originator is the Database class, the Memento is the DatabaseMemento class,
 and the Caretaker is the TransactionManager class.
 """

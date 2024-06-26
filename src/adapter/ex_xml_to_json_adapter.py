@@ -1,7 +1,5 @@
 """
-Object Adapter Design Pattern
-
-Example: XML to JSON Adapter
+Object Adapter Pattern Example: XML to JSON Adapter
 """
 import json
 import xml.etree.ElementTree as ET

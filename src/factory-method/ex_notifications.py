@@ -1,7 +1,6 @@
 """
-Factory Method Design Pattern
+Factory Method Pattern Example: Notifications System
 
-Example: Notifications System
 In this example, we use the Factory Method pattern to
 create different types of notifications.
 """

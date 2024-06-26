@@ -1,7 +1,5 @@
 """
-Mediator Design Pattern
-
-Example: Stock Market
+Mediator Pattern Example: Stock Market
 """
 from __future__ import annotations
 from abc import ABC, abstractmethod

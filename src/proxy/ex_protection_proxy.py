@@ -1,3 +1,8 @@
+"""
+Protection Proxy Example: A protection proxy that controls access to sensitive data based on the user's role.
+"""
+
+
 class SensitiveData:
     """Class representing sensitive data."""
 

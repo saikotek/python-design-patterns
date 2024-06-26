@@ -1,7 +1,6 @@
 """
-Iterator Design Pattern
+Iterator Design Pattern Example: Graph Traversal
 
-Example: Graph Traversal
 There are many ways to traverse a graph, such as breadth-first search (BFS) 
 and depth-first search (DFS). This example demonstrates how to implement the
 Iterator Design Pattern to traverse a graph using both BFS and DFS.

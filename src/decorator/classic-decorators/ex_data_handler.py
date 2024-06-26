@@ -1,7 +1,5 @@
 """
-Decorator Design Pattern
-
-Example: Data Handler with Encryption and Compression Decorators
+Decorator Pattern Example: Data Handler with Encryption and Compression Decorators
 """
 
 class DataHandler:

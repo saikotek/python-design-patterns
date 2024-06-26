@@ -1,3 +1,6 @@
+"""
+Logging Proxy Example: A logging proxy that logs each request made to the original object.
+"""
 class Service:
     """Class representing the original service."""
 

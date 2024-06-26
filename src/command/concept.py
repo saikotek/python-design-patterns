@@ -1,5 +1,5 @@
 """
-Command Design Pattern
+Command Pattern
 
 Intent: Turns a request into a stand-alone object which allows 
 parameterization of clients with different requests, queuing of requests,

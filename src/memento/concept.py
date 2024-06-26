@@ -1,7 +1,7 @@
 """
-Memento Design Pattern
+Memento Pattern
 
-Memento pattern allows an object to capture its internal state without exposing its internal structure.
+Intent: Memento pattern allows an object to capture its internal state without exposing its internal structure.
 State of a target object (Originator) is saved in a Memento object and can be restored later (undo mechanism).
 The Caretaker object is responsible for keeping track of the Memento objects.
 """

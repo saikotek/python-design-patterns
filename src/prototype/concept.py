@@ -1,4 +1,4 @@
-"""Prototype Design Pattern
+"""Prototype Pattern
 
 Intent: Allows cloning objects without coupling to their specific classes.
 

@@ -1,5 +1,5 @@
 """
-Chain of Responsibility Design Pattern
+Chain of Responsibility Pattern
 
 Intent: Allows an object to pass a request along a chain of handlers. 
 Each handler in the chain decides either to process the request or

@@ -1,8 +1,7 @@
 """
-Facade Design Pattern
-
-Example: Third-Party Email Library
+Facade Pattern Example: Third-Party Email Library
 """
+
 
 class EmailLib:
     """

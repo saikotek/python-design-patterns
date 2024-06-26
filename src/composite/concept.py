@@ -1,5 +1,5 @@
 """
-Composite Design Pattern
+Composite Pattern
 
 Intent: Lets you compose objects into tree-like structures and allows clients 
 to treat individual objects and compositions of objects uniformly. 

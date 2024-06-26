@@ -1,6 +1,4 @@
-"""Visitor Design Pattern
-
-Example: We use the Visitor pattern to implement a file system visitor that can
+"""Visitor Pattern Example: File system visitor that can
 perform different operations on files.
 
 We implement two concrete visitors: FileSizeVisitor and MetadataGeneratorVisitor.

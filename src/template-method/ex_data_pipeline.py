@@ -1,6 +1,4 @@
-"""Template Method Design Pattern
-
-Example: Data processing pipeline using the Template Method pattern.
+"""Template Method Pattern Example: Data processing pipeline
 """
 from abc import ABC
 

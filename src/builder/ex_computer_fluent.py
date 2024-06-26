@@ -1,6 +1,5 @@
 """
-Builder Design Pattern
-Example: Fluent Builder for building computer with different specifications.
+Builder Pattern Example: Fluent Builder for building computer with different specifications.
 """
 from abc import ABC
 

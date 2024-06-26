@@ -1,7 +1,6 @@
 """
-Mediator Design Pattern
+Mediator Pattern Example: Chat Room
 
-Example: Chat Room
 This example demonstrates the Mediator design pattern that relies on the Observer pattern
 to notify all users in a chatroom when a user sends a message.
 """

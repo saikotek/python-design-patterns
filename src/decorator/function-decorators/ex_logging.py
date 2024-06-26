@@ -1,7 +1,5 @@
 """
-Python Function Decorators
-
-Example: Logging Decorator
+Python Function Decorators Example: Logging Decorator
 """
 import functools
 import logging

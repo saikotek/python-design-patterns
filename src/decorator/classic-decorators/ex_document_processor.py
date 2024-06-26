@@ -1,9 +1,6 @@
 """
-Decorator Design Pattern
-
-Example: Document Processor with Spell Check and Grammar Check Decorators
+Decorator Pattern Example: Document Processor with Spell Check and Grammar Check Decorators
 """
-
 from typing import Protocol
 
 

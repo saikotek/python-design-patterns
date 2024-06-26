@@ -1,7 +1,5 @@
 """
-Chain of Responsibility Design Pattern
-
-Example: GUI Components with Contextual Help
+Chain of Responsibility Pattern Example: GUI Components with Contextual Help
 """
 from __future__ import annotations
 from typing import Optional, Protocol

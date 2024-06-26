@@ -1,6 +1,5 @@
-"""Singleton Design Pattern
-
-Example: Configuration class that stores application settings as a singleton.
+"""Singleton Pattern Example: Configuration class that stores
+application settings as a singleton.
 """
 from __future__ import annotations
 

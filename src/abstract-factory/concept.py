@@ -1,5 +1,5 @@
 """
-Abstract Factory Design Pattern
+Abstract Factory Pattern
 
 Intent: Lets you create families of related objects without specifying their
 concrete implementations.

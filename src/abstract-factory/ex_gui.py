@@ -1,6 +1,5 @@
 """
-Abstract Factory Design Pattern
-Example: GUI Factory
+Abstract Factory Pattern Example: GUI Elements
 
 This module demonstrates the Abstract Factory design pattern by creating
 families of related UI elements without specifying their concrete classes.

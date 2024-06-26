@@ -1,4 +1,4 @@
-"""Enum-based State Machine
+"""Enum-based State Machine Example: Traffic Lights
 
 Intent: Sometimes using the state design pattern is an overkill. 
 In such cases, you can use a simple enum-based state machine.

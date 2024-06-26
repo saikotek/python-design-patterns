@@ -1,4 +1,4 @@
-"""Specification Pattern Example (E-commerce)
+"""Specification Pattern Example: E-commerce Product Filtering
 
 In this example, we create a list of products and then filter them based
 on a combined specification of price range and category.

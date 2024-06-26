@@ -1,5 +1,5 @@
 """
-Observer Design Pattern
+Observer Pattern
 
 Intent: Defines a one-to-many relation between objects so that when one object (the subject)
 changes state, all its dependents (observers) are notified.

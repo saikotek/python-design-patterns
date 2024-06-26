@@ -1,5 +1,5 @@
 """
-State Design Pattern
+State Pattern
 
 Intent: Lets an object alter its behavior when its internal state changes. It
 appears as if the object changed its class. This is close concept to finite state machines.

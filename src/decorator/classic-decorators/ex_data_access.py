@@ -1,7 +1,6 @@
 """
-Decorator Design Pattern
-
-Example: Data Access Service with Access Control and Caching Decorators
+Decorator Design Pattern Example: Data Access Service with Access Control
+and Caching Decorators
 """
 
 class Component:

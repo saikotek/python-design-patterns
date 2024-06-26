@@ -1,7 +1,5 @@
 """
-Bridge Design Pattern
-
-Example: Tkinter GUI application.
+Bridge Pattern Example: Tkinter GUI application.
 
 The script defines:
 - Theme (Implementor interface)

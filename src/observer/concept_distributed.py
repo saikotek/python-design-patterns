@@ -1,4 +1,5 @@
-"""Distributed Observer Pattern
+"""
+Distributed Observer Pattern
 
 Intent: The distributed observer pattern allows components to act as both publishers and subscribers.
 Each component can dynamically subscribe to events published by other components and publish

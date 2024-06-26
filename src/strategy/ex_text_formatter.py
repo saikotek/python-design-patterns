@@ -1,9 +1,8 @@
-"""Strategy Design Pattern
-
-Example: Changing text formatting strategies in a document editor.
 """
-
+Strategy Pattern Example: Changing text formatting strategies in a document editor.
+"""
 from typing import Protocol
+
 
 class TextFormatter(Protocol):
     """Protocol that defines the interface for text formatting strategies."""

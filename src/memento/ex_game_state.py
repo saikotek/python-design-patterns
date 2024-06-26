@@ -1,7 +1,5 @@
 """
-Memento Design Pattern
-
-Example: Saving and restoring the state of a game
+Memento Pattern Example: Saving and restoring the state of a game
 """
 from dataclasses import dataclass, field
 import datetime

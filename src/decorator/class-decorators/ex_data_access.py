@@ -1,7 +1,5 @@
 """
-Python Class Decorators
-
-Example: Data Access Control with Class Decorators
+Python Class Decorators Example: Data Access Control with Class Decorators
 In similar manner to Decorator pattern, Python decorators can 
 wrap either original behaviour or wrap another decorator
 allowing multiple decorators to be applied to a function.

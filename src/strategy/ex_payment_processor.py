@@ -1,6 +1,5 @@
-"""Strategy Design Pattern
-
-Example: Changing payment strategies for an online store.
+"""
+Strategy Pattern Example: Changing payment strategies for an online store.
 """
 
 from typing import Protocol

@@ -1,7 +1,5 @@
 """
-Python Function Decorators
-
-Example: Access Control Decorator
+Python Function Decorators Example: Access Control Decorator
 """
 
 import functools

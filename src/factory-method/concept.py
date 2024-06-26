@@ -1,5 +1,5 @@
 """
-Factory Method Design Pattern
+Factory Method Pattern
 
 Intent: Lets you create objects without specifying the exact class to create.
 This pattern uses factory methods to deal with the problem of creating objects

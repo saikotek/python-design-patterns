@@ -1,9 +1,12 @@
-from abc import ABC, abstractmethod
+"""
+Prototype Pattern Example: Document Cloning
+"""
+from abc import ABC
 import copy
 from typing import Dict, Any
 
 
-class Report:
+class Report(ABC):
     """Report class, a specific type of document.
 
     Attributes:

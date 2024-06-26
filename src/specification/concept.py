@@ -1,4 +1,4 @@
-"""Specification Design Pattern
+"""Specification Pattern
 
 Intent: Allows to create complex filtering logic by combining simple rules.
 """

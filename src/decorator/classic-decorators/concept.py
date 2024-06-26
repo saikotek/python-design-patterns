@@ -1,5 +1,5 @@
 """
-Decorator Design Pattern
+Decorator Pattern
 
 Intent: Allows behavior to be added to an individual object, dynamically, 
 without affecting the behavior of other instances of the same class.

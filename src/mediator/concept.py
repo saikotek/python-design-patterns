@@ -1,6 +1,14 @@
+"""
+Mediator Pattern
+
+Intent: Lets you reduce chaotic dependencies between objects. 
+The pattern restricts direct communications between the objects
+and forces them to collaborate only via a mediator object.
+"""
 from __future__ import annotations
 from abc import ABC, abstractmethod
 from typing import Protocol, List
+
 
 class Mediator(Protocol):
     """Mediator defines an interface for communicating with Colleague objects."""

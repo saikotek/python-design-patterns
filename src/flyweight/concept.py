@@ -1,5 +1,5 @@
 """
-Flyweight Design Pattern
+Flyweight Pattern
 
 Intent: Lets you minimize memory usage by sharing
 some common state between multiple objects instead

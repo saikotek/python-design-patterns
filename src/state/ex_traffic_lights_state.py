@@ -1,4 +1,4 @@
-"""State Design Pattern
+"""State Pattern Example: Traffic Lights
 
 Class-based state machine implementation using the state design pattern.
 

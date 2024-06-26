@@ -1,4 +1,4 @@
-"""Visitor Design Pattern
+"""Visitor Pattern
 
 Intent: Lets you separate algorithms from the objects on which they operate.
 This is achieved by creating a separate object (a visitor) that performs the

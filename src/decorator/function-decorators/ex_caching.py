@@ -1,7 +1,5 @@
 """
-Python Function Decorators
-
-Example: Caching Decorator
+Python Function Decorators Example: Caching Decorator
 """
 import functools
 

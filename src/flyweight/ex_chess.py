@@ -1,5 +1,5 @@
 """
-Flyweight Design Pattern
+Flyweight Pattern
 
 Example: Chess Pieces factory reusing shared pieces
 """
