@@ -1,4 +1,5 @@
-"""Template Method Pattern Example: Data processing pipeline
+"""
+Template Method Pattern Example: Data processing pipeline
 """
 from abc import ABC
 

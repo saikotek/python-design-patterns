@@ -1,7 +1,7 @@
 """
 Abstract Factory Pattern Example: GUI Elements
 
-This module demonstrates the Abstract Factory design pattern by creating
+Demonstrates the Abstract Factory design pattern by creating
 families of related UI elements without specifying their concrete classes.
 """
 from typing import Protocol
