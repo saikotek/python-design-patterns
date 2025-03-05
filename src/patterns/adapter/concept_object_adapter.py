@@ -1,5 +1,4 @@
-"""
-Object Adapter Pattern
+"""Object Adapter Pattern
 
 Intent: Converts the interface of a class into another interface that the clients
 expect. Adapter lets classes work together that couldn't otherwise because of

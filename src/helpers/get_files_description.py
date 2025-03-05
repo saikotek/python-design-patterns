@@ -20,10 +20,10 @@ def get_files_description(base_path: str):
             for i, line in enumerate(lines):
                 if i == 0 and line.strip() == '"""':
                     continue
+                if line == "" or line == "\n":
+                    continue
                 if i > 0 and '"""' in line:
                     break
-                if i > 0 and line == '\n':
-                    description += "-"
                 description += line.strip().replace('"""', "") + "\n"
 
             description = description.strip().replace("\n", " ")

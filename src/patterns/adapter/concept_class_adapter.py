@@ -1,8 +1,7 @@
-"""
-Class Adapter Pattern
+"""Class Adapter Pattern
 
-Intent: Converts the interface of a class into another interface that the clients
-expect. Adapter lets classes work together that couldn't otherwise because of
+Intent: Converts the interface of a class into another interface that the clients expect. 
+Adapter lets classes work together that couldn't otherwise because of
 incompatible interfaces.
 Class adapter uses multiple inheritance to adapt one interface to another.
 """
@@ -12,8 +11,8 @@ from typing import Protocol
 class Target(Protocol):
     """Protocol declaring domain-specific interface used by the client code."""
 
-    def request(self, input_str) -> str:
-        ...
+    def request(self, input_str) -> str: ...
+
 
 class ConcreteTarget(Target):
     """Example of a class that follows the Target interface."""
@@ -22,11 +21,13 @@ class ConcreteTarget(Target):
         # add numbers separated by , and return the sum
         return f"Result: {sum(map(int, input_str.split(',')))}"
 
+
 class Adaptee:
     """Defines an existing interface that needs adapting."""
 
     def specific_request(self, a: int, b: int) -> str:
         return f"Result: {a + b}"
+
 
 class Adapter(Target, Adaptee):
     """Adapter makes the Adaptee's interface compatible with the Target's interface.

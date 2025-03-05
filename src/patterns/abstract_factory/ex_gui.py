@@ -1,8 +1,6 @@
-"""
-Abstract Factory Pattern Example: GUI Elements
+"""Abstract Factory Pattern Example: GUI Elements
 
-Demonstrates the Abstract Factory design pattern by creating
-families of related UI elements without specifying their concrete classes.
+Demonstrates the Abstract Factory design pattern by creating families of related UI elements without specifying their concrete implementations for Windows and Mac OS.
 """
 from typing import Protocol
 
