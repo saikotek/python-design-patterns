@@ -1,5 +1,5 @@
+autopep8
 pycodestyle
-pep8
 testcontainers
 psycopg2-binary
 faker
