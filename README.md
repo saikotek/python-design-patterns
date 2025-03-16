@@ -29,6 +29,8 @@ Each design pattern has at least two scripts:
   - `concept.py` - conceptual implementation
   - `ex_{script}.py` - example real-world scenario
 
+We'll start with classic design patterns and then move on to additional patterns.
+Classic design patterns are divided into three categories: creational, structural, and behavioral.
 ### Creational Patterns
 - **Abstract Factory**
   - `concept.py` - Intent: Lets you create families of related objects without specifying their concrete implementations.
