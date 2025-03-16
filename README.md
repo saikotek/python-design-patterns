@@ -152,11 +152,17 @@ Each design pattern has at least two scripts:
 
 ### Additional Patterns
 - **Repository**
-  - `ex_user_repository.py` - Intent: Decouples business logic from data access, providing collection-like abstraction for data.
+  - `concept.py` - Intent: Mediates between the domain and data mapping layers using a collection-like interface for accessing data.
+  - `ex_sqlite_repository.py` - Example: SQLite repository for storing and retrieving data.
 
 - **Specification**
   - `concept.py` - Intent: Creates complex filtering logic by combining simple rules.
   - `ex_ecommerce.py` - Example: E-commerce product filtering using combined specifications.
+
+- **Context Manager**
+  - `concept.py` - Intent: Simplifies resource management by providing setup and teardown actions.
+  - `ex_timing.py` - Example: Timing context manager for measuring execution time of inner block.
+  - `ex_database_connection.py` - Example: Database connection context manager to properly save changes and close connections.
 
 ## Remarks
 - Most of the examples don't do the real job, they just show how you'd leverage the design pattern in certain use case.<br/>
