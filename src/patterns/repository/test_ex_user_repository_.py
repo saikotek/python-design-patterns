@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import Mock
-from ex_user_repository import User, UserService, UserRepository
+from patterns.repository.ex_sqlite_repository import User, UserService, UserRepository
 
 class TestUserService(unittest.TestCase):
     """Unit tests for UserService."""
